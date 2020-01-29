@@ -1,13 +1,13 @@
 const node = require("plugdo-node").node();
 const path = require("path");
 const expressLocale = require("express-locale");
-const lang = require("./lang/languages");
+//const lang = require("./lang/languages");
 var cookieParser = require('cookie-parser')
 const globalPath = process.env.PLUGDO_GLOBAL_PATH || "./source/app.config.js";
 global.settings = require(globalPath).settings()[process.env.PLUGDO_GLOBAL_ENV || 'dev'];
 const port = process.env.PORT === undefined ? 3000 : process.env.PORT;
 
-var location = "";
+// var location = "";
 
 // global.config = {
 //     lang: lang.get(),

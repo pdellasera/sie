@@ -1,0 +1,477 @@
+<!-- start page content -->
+<div class="page-content-wrapper">
+    <div class="page-content">
+        <div class="page-bar">
+            <div class="page-title-breadcrumb">
+                <div class=" pull-left">
+                    <div class="page-title">Admisiones</div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card-box">
+                    <div class="card-head">
+                        <header>Información Básica</header>
+                        <div class="col-md-12">
+
+                            <div class="setting image_picker float-rigth">
+                                <h2>Foto alumno</h2>
+                                <div class="settings_wrap">
+                                    <label class="drop_target">
+                                        <div class="image_preview"></div>
+                                        <input id="inputFile" type="file" />
+                                    </label>
+                                    <div class="settings_actions vertical d-flex">
+                                        <!-- <a data-action="choose_from_uploaded">
+                                            <i class="material-icons">find_in_page</i>
+                                        </a> -->
+                                        <a class="disabled" data-action="remove_current_image">
+                                            <i class="material-icons">delete_sweep</i>
+                                        </a>
+                                    </div>
+                                    <div class="image_details">
+                                        <label class="input_line image_title">
+                                            <input type="text" placeholder="Title" />
+                                        </label>
+                                        <!--label.input_line.image_alt//input(type='text' placeholder='Alternative Text')
+      -->
+                                        <!--a.confirm(data-action='confirm_image_details')//i.fa.fa-check-circle
+      -->
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- <button id="panel-button"
+                            class="mdl-button mdl-js-button mdl-button--icon pull-right"
+                            data-upgraded=",MaterialButton">
+                            <i class="material-icons">more_vert</i>
+                        </button>
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                            data-mdl-for="panel-button">
+                            <li class="mdl-menu__item"><i class="material-icons">assistant_photo</i>Action
+                            </li>
+                            <li class="mdl-menu__item"><i class="material-icons">print</i>Another action
+                            </li>
+                            <li class="mdl-menu__item"><i class="material-icons">favorite</i>Something else
+                                here</li>
+                        </ul> -->
+                    </div>
+                    <div class="card-body row">
+                        <div class="col-lg-4 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" type="text" id="txtFirstName">
+                                <label class="mdl-textfield__label">Nombre</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" type="text" id="txtLasttName">
+                                <label class="mdl-textfield__label">Apellido</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" type="text" id="txtRollNo">
+                                <label class="mdl-textfield__label">Cedula</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" type="email" id="txtemail">
+                                <label class="mdl-textfield__label">Email</label>
+                                <span class="mdl-textfield__error">Enter Valid Email Address!</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" type="text" id="date">
+                                <label class="mdl-textfield__label">Fecha de Admision</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height txt-full-width">
+                                <input class="mdl-textfield__input" type="text" id="list2" value="" readonly
+                                    tabIndex="-1">
+                                <label for="list2" class="pull-right margin-0">
+                                    <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+                                </label>
+                                <label for="list2" class="mdl-textfield__label">Grado</label>
+                                <ul data-mdl-for="list2" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                                    <li class="mdl-menu__item" data-val="DE">Computer</li>
+                                    <li class="mdl-menu__item" data-val="BY">Mechanical</li>
+                                    <li class="mdl-menu__item" data-val="BY">Mathematics</li>
+                                    <li class="mdl-menu__item" data-val="BY">Commerce</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 p-t-20">
+                            <div
+                                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height txt-full-width">
+                                <input class="mdl-textfield__input" type="text" id="sample2" value="" readonly
+                                    tabIndex="-1">
+                                <label for="sample2" class="pull-right margin-0">
+                                    <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+                                </label>
+                                <label for="sample2" class="mdl-textfield__label">Genero</label>
+                                <ul data-mdl-for="sample2" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                                    <li class="mdl-menu__item" data-val="DE">Masculino</li>
+                                    <li class="mdl-menu__item" data-val="BY">Femenino</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?"
+                                    id="text5">
+                                <label class="mdl-textfield__label" for="text5">Tipo de Sangre</label>
+                                <span class="mdl-textfield__error">Number required!</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" type="text" id="dateOfBirth">
+                                <label class="mdl-textfield__label">Fecha de Nacimiento</label>
+                            </div>
+                            
+                        </div>
+
+                        <div class="col-lg-4 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?"
+                                    id="txtPNo">
+                                <label class="mdl-textfield__label" for="txtPNo">Parentesco</label>
+                                <span class="mdl-textfield__error">Number required!</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" type="text" id="txtParentName">
+                                <label class="mdl-textfield__label">Nombre de acudiente</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" type="number" id="txtnumPhone">
+                                <label class="mdl-textfield__label">Numero de Telefono</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield txt-full-width">
+                                <textarea class="mdl-textfield__input" rows="4" id="text7"></textarea>
+                                <label class="mdl-textfield__label" for="text7">Address</label>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 p-t-20 text-center">
+                            <button type="button"
+                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 m-r-20 btn-pink">Submit</button>
+                            <button type="button"
+                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 btn-default">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .card-head header {
+        display: inline-block;
+        padding: 67px 91px;
+        vertical-align: middle;
+        line-height: 17px;
+        font-size: 20px;
+        position: absolute;
+    }
+
+    .float-rigth {
+        float: right;
+    }
+
+    @font-face {
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v17/mem8YaGs126MiZpBA-UFVZ0e.ttf) format('truetype');
+    }
+
+    .setting {
+        background: #fff;
+        margin: 0 auto 3px;
+        padding: 12px;
+        width: 300px;
+    }
+
+    .setting h2 {
+        color: #999;
+        font-size: 14px;
+        font-weight: 400;
+        margin: 0 0 6px;
+        line-height: 24px;
+    }
+
+    .setting a[data-action] {
+        cursor: pointer;
+        color: #555;
+        font-size: 14px;
+        line-height: 24px;
+        transition: color 0.2s;
+    }
+
+    .setting a[data-action] i {
+        width: 1.25em;
+        text-align: center;
+    }
+
+    .setting a[data-action]:hover {
+        color: #f80;
+    }
+
+    .setting a[data-action].disabled {
+        opacity: 0.35;
+        cursor: default;
+    }
+
+    .setting a[data-action].disabled:hover {
+        color: #555;
+    }
+
+    .image_picker .settings_wrap {
+        overflow: hidden;
+        position: relative;
+    }
+
+    .image_picker .settings_wrap .drop_target,
+    .image_picker .settings_wrap .settings_actions {
+        float: left;
+    }
+
+    .image_picker .settings_wrap .drop_target {
+        margin-right: 18px;
+    }
+
+    .image_picker .settings_wrap .settings_actions {
+        margin-top: 12px;
+    }
+
+    .settings_actions.vertical a {
+        display: block;
+    }
+
+    .drop_target {
+        position: relative;
+        cursor: pointer;
+        background: hsl(0, 0%, 90%);
+        border-top: 1px solid hsl(0, 0%, 80%);
+        border-radius: 4px;
+        width: 72px;
+        height: 72px;
+        padding: 4px 6px 6px;
+        transition: all 0.2s;
+    }
+
+    .drop_target input[type="file"] {
+        visibility: hidden;
+    }
+
+    .drop_target:before {
+        content: '\f0ee';
+        font-family: FontAwesome;
+        position: absolute;
+        display: block;
+        width: 60px;
+        line-height: 60px;
+        text-align: center;
+        font-size: 32px;
+        color: rgba(0, 0, 0, 0.3);
+        transition: color 0.2s;
+    }
+
+    .drop_target:hover,
+    .drop_target.dropping {
+        background: #f80;
+        border-top-color: #cc6d00;
+    }
+
+    .drop_target:hover:before,
+    .drop_target.dropping:before {
+        color: rgba(0, 0, 0, 0.6);
+    }
+
+    .drop_target .image_preview {
+        width: 100%;
+        height: 100%;
+        background: no-repeat center;
+        background-size: contain;
+        position: relative;
+        z-index: 2;
+    }
+
+    .image_details {
+        width: 192px;
+        padding: 4px;
+        background: hsl(0, 0%, 90%);
+        border-radius: 4px;
+        position: absolute;
+        top: 0;
+        left: 84px;
+        z-index: 5;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.4s;
+    }
+
+    .mdl-textfield__label {
+        color: #000000 !important;
+        font-size: 13px !important;
+    }
+
+    /* .dropped~.image_details {
+        opacity: 1;
+        pointer-events: all;
+    } */
+
+    .image_details:before {
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        border: 6px solid transparent;
+        border-right-color: hsl(0, 0%, 90%);
+        position: absolute;
+        left: -12px;
+        top: 10px;
+    }
+
+    .image_details .input_line {
+        display: block;
+        overflow: hidden;
+        margin-bottom: 4px;
+    }
+
+    .image_details .input_line:last-of-type {
+        margin-bottom: 0;
+    }
+
+    .image_details .input_line span,
+    .image_details .input_line input {
+        float: left;
+        line-height: 24px;
+    }
+
+    .image_details .input_line span {
+        font-size: 12px;
+        color: #666;
+        width: 20%;
+    }
+
+    .image_details .input_line input[type="text"] {
+        width: 100%;
+        color: #444444;
+        appearance: none;
+        border: 1px solid hsl(0, 0%, 90%);
+        border-radius: 3px;
+        background: #fff;
+        height: 24px;
+        line-height: 18px;
+        padding: 3px 5px;
+        font-size: 14px;
+        transition: border 0.2s;
+    }
+
+    .image_details .input_line input[type="text"]:hover,
+    .image_details .input_line input[type="text"]:focus {
+        outline: 0;
+        border: 1px solid #f80;
+    }
+
+    .image_details .input_line input[type="text"]::-webkit-input-placeholder {
+        font-size: 14px;
+        color: #999;
+    }
+
+    .image_details a.confirm {
+        position: absolute;
+        right: -12px;
+        top: 50%;
+        margin-top: -12px;
+        display: block;
+        width: 21px;
+        height: 21px;
+        border-radius: 100%;
+        background: #eee;
+        line-height: 23px;
+        text-align: center;
+        font-size: 16px;
+    }
+</style>
+<script>
+    var $dropzone = $('.image_picker'),
+        $droptarget = $('.drop_target'),
+        $dropinput = $('#inputFile'),
+        $dropimg = $('.image_preview'),
+        $remover = $('[data-action="remove_current_image"]');
+
+    $dropzone.on('dragover', function () {
+        $droptarget.addClass('dropping');
+        return false;
+    });
+
+    $dropzone.on('dragend dragleave', function () {
+        $droptarget.removeClass('dropping');
+        return false;
+    });
+
+    $dropzone.on('drop', function (e) {
+        $droptarget.removeClass('dropping');
+        $droptarget.addClass('dropped');
+        $remover.removeClass('disabled');
+        e.preventDefault();
+
+        var file = e.originalEvent.dataTransfer.files[0],
+            reader = new FileReader();
+
+        reader.onload = function (event) {
+            $dropimg.css('background-image', 'url(' + event.target.result + ')');
+        };
+
+        console.log(file);
+        reader.readAsDataURL(file);
+
+        return false;
+    });
+
+    $dropinput.change(function (e) {
+        $droptarget.addClass('dropped');
+        $remover.removeClass('disabled');
+        $('.image_title input').val('');
+
+        var file = $dropinput.get(0).files[0],
+            reader = new FileReader();
+
+        reader.onload = function (event) {
+            $dropimg.css('background-image', 'url(' + event.target.result + ')');
+        }
+
+        reader.readAsDataURL(file);
+    });
+
+    $remover.on('click', function () {
+        $dropimg.css('background-image', '');
+        $droptarget.removeClass('dropped');
+        $remover.addClass('disabled');
+        $('.image_title input').val('');
+    });
+
+    $('.image_title input').blur(function () {
+        if ($(this).val() != '') {
+            $droptarget.removeClass('dropped');
+        }
+    });
+</script>
+<!-- end page content -->

@@ -1,6 +1,6 @@
 let { url, binder, request, view, cookie, route } = plugdo;
 window.global = {
     api: {
-       getUser:""
+       getUser:"/api/get/check/json"
     }
 }

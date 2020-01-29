@@ -1,0 +1,36 @@
+<plugdo-archive-student>
+    <data>
+        {
+            "css":"odd gradeX",
+            "items":[{
+                "userID":"12",
+                "nombre":"Jose Bartolome",
+                "bachiller":"Ciencias",
+                "cedula":"8-996-6366",
+                "email":"jbartolome@gmail.com",
+                "año":"2020",
+                "img":"img/std/std1.jpg"
+            }]
+        }
+    </data>
+    <template>
+        <template-item type="tr" class="[json:css]" model="items"></template-item>
+    </template>
+    <template-item>
+        <td class="patient-img">
+            <img src="[json:img]" alt="">
+        </td>
+        <td class="left">[json:userID]</td>
+        <td>[json:nombre]</td>
+        <td class="left">[json:bachiller]</td>
+        <td><a href="tel:4444565756">[json:cedula]</a></td>
+        <td><a href="mailto:shuxer@gmail.com">[json:email]</a></td>
+        <td class="left">[json:año]</td>
+        <td>
+            <a href="edit_professor.html"
+                class="btn btn-primary btn-xs">
+                <i class="material-icons small">search</i>
+            </a>
+        </td>
+    </template-item>
+</plugdo-archive-student>

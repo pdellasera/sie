@@ -9,7 +9,7 @@ const setting = {
         user: "root",
         password: "",
         host: "localhost",
-        database: "SIE"
+        database: "eduko"
       }
     }
     // ,
