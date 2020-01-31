@@ -10,10 +10,10 @@ function signin() {
                 user: input.username,
                 password: input.password
             }
-            request.post(global.api.getUser, user, function (res) {
-                var isvalid = res.response.result.Database[0].Table.Row[0][0].isExist 
+            //request.post(global.api.getUser, user, function (res) {
+                var isvalid = 1;
                 if (isvalid == 1) {
-                    cookie.set("session", JSON.stringify(res.response.result.Database[0].Table.Row[0][0]), 1);
+                   // cookie.set("session", JSON.stringify(res.response.result.Database[0].Table.Row[0][0]), 1);
                     window.location.href = "/dashboard"
                 } else {
                     Swal.fire({
@@ -23,7 +23,7 @@ function signin() {
                         confirmButtonText: 'Ok'
                     })
                 }
-            })
+            //})
 
 
         });
