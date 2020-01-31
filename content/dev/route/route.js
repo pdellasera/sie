@@ -135,6 +135,24 @@ var page_admissions = {
     } 
 }
 
+var page_factura = {
+    name: "factura",
+    page: "./page/factura.html",
+    postLoad: function () {
+        $(document).ready(function () {
+           view.load();
+        });
+    } 
+}
+var page_invoice = {
+    name: "invoice",
+    page: "./page/invoice.html",
+    postLoad: function () {
+        $(document).ready(function () {
+           view.load();
+        });
+    } 
+}
 // SECCION DE LOAD LAYOUT
 route.load({
     el: "#container",
@@ -150,3 +168,5 @@ route.register(page_sutentArchive);
 route.register(page_sutentSearch);
 route.register(page_searchProfesor);
 route.register(page_admissions);
+route.register(page_factura);
+route.register(page_invoice);
