@@ -63,8 +63,8 @@ function dashboardHandler() {
         });
 
     }
-    var user = JSON.parse( cookie.get("session"));
-    var nick = user.user.substr(0,user.user.indexOf("@"))
+    //var user = JSON.parse( cookie.get("session"));
+    var nick = "Default"//user.user.substr(0,user.user.indexOf("@"))
    $(".username").text(nick)
     
 }
