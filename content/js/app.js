@@ -478,6 +478,10 @@ var App = function() {
         }
     };
 
+    // handle tootltiop
+    var habdleTooltip = function(){
+            $('[data-toggle="tooltip"]').tooltip("enable")
+    }
     // handle group element heights
     var handleHeight = function() {
         $('[data-auto-height]').each(function() {
@@ -612,7 +616,7 @@ var App = function() {
             handleDropdowns(); // handle dropdowns
             handleTabs(); // handle tabs
             handleCounterup(); // handle counterup instances
-
+            habdleTooltip(); // handle tooltips
             handleQuickSidebarToggler(); // handles quick sidebar's toggler
             handleQuickSidebarSettings(); // handles quick sidebar's setting
             handleChatScrollbar();

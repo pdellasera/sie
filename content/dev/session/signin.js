@@ -4,16 +4,17 @@ function signin() {
         binder();
         $("#signinBtn").click(function (e) {
             e.preventDefault();
-            console.log("estoy aqui")
+            //console.log("estoy aqui")
             var input = binder(log);
             var user = {
                 user: input.username,
                 password: input.password
             }
-            //request.post(global.api.getUser, user, function (res) {
-                var isvalid = 1;
+            request.post(global.api.getUser, user, function (res) {
+                var isvalid = res.response.result.Database[0].Table.Row[0][0].isExist;
+                //console.log(isvalid)
                 if (isvalid == 1) {
-                   // cookie.set("session", JSON.stringify(res.response.result.Database[0].Table.Row[0][0]), 1);
+                    cookie.set("session", JSON.stringify(res.response.result.Database[0].Table.Row[0][0]), 1);
                     window.location.href = "/dashboard"
                 } else {
                     Swal.fire({
@@ -23,9 +24,7 @@ function signin() {
                         confirmButtonText: 'Ok'
                     })
                 }
-            //})
-
-
+            })
         });
     }
 

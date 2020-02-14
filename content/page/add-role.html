@@ -1,0 +1,98 @@
+<!-- start page content -->
+<div class="page-content-wrapper">
+    <div class="page-content">
+        <div class="page-bar">
+            <div class="page-title-breadcrumb">
+                <div class=" pull-left">
+                    <div class="page-title">Crear Role</div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card-box">
+                    <div class="card-head">
+                        <header>Role</header>
+                    </div>
+                    <div class="card-body">
+
+                        <!-- <div class="col-lg-4 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?"
+                                    id="text2">
+                                <label class="mdl-textfield__label" for="text2">
+                                    Number Text Field</label>
+                                <span class="mdl-textfield__error">Number required!</span>
+                            </div>
+                        </div> -->
+                        <div class="row">
+                            <div class="col-lg-6 p-t-20">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-width">
+                                    <input class="mdl-textfield__input" type="text" id="text4"
+                                        eui-bind="dataU.roleName">
+                                    <label class="mdl-textfield__label" for="text4">Nombre del role</label>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card-head">
+                                    <header>Permisos</header>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12 p-t-20 d-flex">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">
+                                    <input type="checkbox" id="checkbox-1" class="mdl-checkbox__input"
+                                        eui-bind="dataU.create">
+                                    <span class="mdl-checkbox__label">Crear</span>
+                                </label>
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-2">
+                                    <input type="checkbox" id="checkbox-2" class="mdl-checkbox__input"  eui-bind="dataU.delete" disabled>
+                                    <span class="mdl-checkbox__label">Eliminar</span>
+                                </label>
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-3">
+                                    <input type="checkbox" id="checkbox-3" class="mdl-checkbox__input" eui-bind="dataU.update">
+                                    <span class="mdl-checkbox__label">Actualizar</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 p-t-20">
+                        </div>
+
+                        <div class="col-lg-12 p-t-20">
+                            <button
+                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+                                id="addRole">
+                                Guardar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $("#addRole").on("click", function (e) {
+            e.preventDefault();
+            binder()
+            var model = binder(dataU)
+            var obj = JSON.parse(cookie.get("session"))
+            var data = {
+                sessionID:obj.sessionID,
+                action: - 1,
+                model:model,
+                module: 100
+            }
+            var action = new UserValidationHadle()
+            action.userPermisos(data)
+        })
+    })
+</script>
+
+<!-- end page content -->

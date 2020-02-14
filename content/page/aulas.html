@@ -1,0 +1,123 @@
+<!-- start page content -->
+<div class="page-content-wrapper">
+    <div class="page-content">
+        <div class="page-bar">
+            <div class="page-title-breadcrumb">
+                <div class=" pull-left">
+                    <div class="page-title">Crear Aula</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card-box">
+                    <div class="card-head">
+                        <header>Aula</header>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-4">
+                                <input type="text" class="form-control" placeholder="Nombre" eui-bind="dataU.aulaName"
+                                    id="abc" onkeyup="myFunction()"
+                                    oninput="this.value = this.value.replace(/([0-9]+)$/, '\$1°');">
+                                <span id="mostrar" class="remove"><i class="" id="changeIcon"></i></span>
+                            </div>
+                            <div class="col-4">
+                                <input type="text"
+                                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                                    class="form-control" placeholder="Capacidad" eui-bind="dataU.capacidad" />
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <select class="form-control" id="selectGrado" eui-bind="dataU.gradoID">
+                                        <option value="" selected disabled>Seleccione un grado</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 p-t-20">
+                        </div>
+                        <div class="col-lg-12 p-t-20">
+                            <button
+                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+                                id="addAula">
+                                Guardar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .remove {
+        position: absolute;
+        top: 8px;
+        right: 32px;
+        color: #E91E63;
+    }
+</style>
+
+<script>
+    $(document).ready(function () {
+        $("#addAula").on("click", function (e) {
+            e.preventDefault();
+            binder()
+            var model = binder(dataU)
+            var obj = JSON.parse(cookie.get("session"))
+            var data = {
+                sessionID:obj.sessionID,
+                action: - 1,
+                model:model,
+                module: 102
+            }
+            var action = new UserValidationHadle()
+            action.userPermisos(data)
+        })
+    })
+    function setGrado() {
+        request.post(global.api.getGrados, {}, function (res) {
+            var array = res.response.result.Database[0].Table.Row[0]
+            var selectList = document.getElementById("selectGrado");
+            var notcreate = false;
+            var next = ""
+            for (var i = 0; i < array.length; i++) {
+                if (notcreate == false) {
+                    var optionGroup = document.createElement("optgroup");
+                    optionGroup.setAttribute("label", array[i].gradosCatName);
+                    optionGroup.setAttribute("value", "100");
+                    optionGroup.setAttribute("id", "opG" + array[i].gradosCatID);
+                    selectList.append(optionGroup);
+                    next = array[i].gradosCatID
+                    notcreate = true
+                }
+                console.log('f')
+                if (array[i].gradosCatID == next) {
+                    next = array[i].gradosCatID
+                    var option = document.createElement("option");
+                    option.setAttribute("value", array[i].gradosID);
+                    option.innerHTML = array[i].gradosName;
+                    optionGroup.append(option);
+                } else {
+                    notcreate = false;
+                    next = array[i].gradosCatID
+                    i = i - 1
+                }
+
+            }
+        });
+    }
+    setGrado()
+    $(".remove").on("click", function () {
+        $("#abc").val("")
+        $("#changeIcon").removeClass("fa fa-times-rectangle")
+    })
+    function myFunction() {
+        var x = document.getElementById("abc");
+        var curVal = x.value;
+        if (curVal != "") {
+            $("#changeIcon").addClass("fa fa-times-rectangle")
+        }
+    }
+</script>

@@ -1,0 +1,128 @@
+<!-- start page content -->
+<div class="page-content-wrapper">
+    <div class="page-content">
+        <div class="page-bar">
+            <div class="page-title-breadcrumb">
+                <div class=" pull-left">
+                    <div class="page-title">Crear Usuario</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card-box">
+                    <div class="card-head">
+                        <header>Usuario</header>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-6">
+                                <input type="email" class="form-control" placeholder="Correo electronico"
+                                    eui-bind="dataU.email">
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <select class="form-control" id="selectRole" eui-bind="dataU.role">
+                                        <option value="" selected disabled>Seleccione un role</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 p-t-20">
+                                <input type="password" class="form-control" id="password" placeholder="Password"
+                                    eui-bind="dataU.password">
+                                    <span id="mostrar" class="eyes"><i class="fa fa-eye-slash" id="changeIcon"></i></span>
+                                
+                            </div>
+                            <div class="col-lg-6 p-t-20">
+                                <input type="password" class="form-control" id="confirmPass" placeholder="Confirma password" eui-bind="dataU.confirmPass">
+                                
+                            </div>
+                        </div>
+                        <div class="col-lg-8 p-t-20">
+                        </div>
+                        <div class="col-lg-12 p-t-20">
+                            <button
+                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+                                id="addUser">
+                                Guardar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .eyes {
+        position: absolute;
+        top: 27px;
+        right: 32px;
+        color: #9e9e9ea3;
+    }
+</style>
+<script>
+    $(document).ready(function () {
+        $("#addUser").on("click", function (e) {
+            e.preventDefault();
+            binder()
+            var model = binder(dataU)
+            var obj = JSON.parse(cookie.get("session"))
+            var data = {
+                sessionID: obj.sessionID,
+                action: - 1,
+                model: model,
+                module: 101
+            }
+            var action = new UserValidationHadle()
+            action.userPermisos(data)
+        })
+
+        $("#confirmPass").blur(function () {
+            binder()
+            var model = binder(dataU)
+            if (model.password != model.confirmPass) {
+                Swal.fire({
+                    position: 'center',
+                    icon: 'error',
+                    title: 'No coinciden las claves',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            }
+
+        })
+        $("#mostrar").on("click", function () {
+            var children = this.children[0]
+            var isHass = children.className.baseVal == "svg-inline--fa fa-eye fa-w-18"
+            console.log(isHass)
+            if (isHass) {
+                $('#password').attr('type', 'password');
+                $('#confirmPass').attr('type', 'password');
+                $('#changeIcon').addClass('fa-eye-slash').removeClass('fa-eye');
+            } else {
+                $('input[type=password]').removeAttr('type');
+                $('#changeIcon').addClass('fa-eye').removeClass('fa-eye-slash');
+            }
+        })
+       
+        function setRole() {
+            request.post(global.api.getRole, {}, function (res) {
+                var array = res.response.result.Database[0].Table.Row[0];
+                var selectList = document.getElementById("selectRole");
+                for (var i = 0; i < array.length; i++) {
+                    var option = document.createElement("option");
+                    option.setAttribute("value", array[i].roleID);
+                    option.text = array[i].roleName;
+                    selectList.appendChild(option);
+                }
+            })
+        }
+        setRole()
+    })
+</script>
+
+<!-- end page content -->
