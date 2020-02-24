@@ -14,8 +14,9 @@ class UserValidationHadle {
             request.post(global.api.checkPermisos, datos, function (res) {
 
                 // MODULO USER
+
                 // SE VALIDA QUE EL CORREO TENGA EL FORMATO CORRECTO
-                if (datos.module == "user") {
+                if (datos.module == 101) {
                     var emailIsValid = self.emailValid(datos.model.email)
                     if (emailIsValid == false) {
                         var msn = {
@@ -28,6 +29,7 @@ class UserValidationHadle {
                         return false
                     }
                 }
+              
 
                 if (res.response == true) {
                     if (data.action == -1) {
@@ -49,7 +51,7 @@ class UserValidationHadle {
             var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
             return re.test(String(email).toLowerCase())
         }
-
+    
         this.msn = function (data) {
             Swal.fire({
                 icon: `${data.icon}`,

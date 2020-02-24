@@ -12,7 +12,8 @@
 						6. SOCIAL BUTTONS
 						7. PROGRESS BAR
 						8. MEGA MENU
-						9. WIDGET
+            9. WIDGET
+            10. SETTING INVOICE
  */
 
 /**************************************
@@ -998,4 +999,115 @@ tr.group:hover {
 }
 .bg-b-pink {
   background: linear-gradient(45deg, #ff5370, #ff869a);
+}
+
+/**************************************
+			10. Setting Invoice
+***************************************/
+
+.es{
+  border: none;
+  margin-bottom: -27px;
+}
+.no-visible{
+  visibility: hidden;
+  opacity: 0;
+}
+.table-wrapper{
+  max-width: 1200px;
+  width: 100%;
+  margin: 20px auto;
+}
+.invoice-num{
+  font-size: 16px;
+  font-weight: bold;
+  color: #ec0000;
+  text-align: center;
+  letter-spacing: 1px;
+}
+.editable::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1; /* Firefox */
+}
+
+.editable:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: white;
+}
+
+.editable::-ms-input-placeholder { /* Microsoft Edge */
+  color: white;
+}
+
+.cr-input{
+  width: 30px !important;
+  text-align: center;
+  position: relative;
+  right: -7px;
+  color: #000000 !important;
+}
+.editable{
+  color: #ffff;
+  margin-left: -14px;
+  width: 211px;
+  background: transparent;
+  border: none;
+}
+.avatar-upload {
+  position: relative;
+  max-width: 205px;
+}
+.avatar-upload .avatar-edit {
+  position: absolute;
+  right: 40px;
+  z-index: 1;
+  top: 10px;
+}
+.avatar-upload .avatar-edit input {
+  display: none;
+}
+.avatar-upload .avatar-edit input + label {
+  display: inline-block;
+  width: 34px;
+  height: 34px;
+  line-height: 1;
+  margin-bottom: 0;
+  border-radius: 100%;
+  background: #FFFFFF;
+  border: 1px solid transparent;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  font-weight: normal;
+  transition: all 0.2s ease-in-out;
+}
+.avatar-upload .avatar-edit input + label:hover {
+  background: #f1f1f1;
+  border-color: #d6d6d6;
+}
+.avatar-upload .avatar-edit input + label:after {
+  content: "\f040";
+  font-family: 'FontAwesome';
+  color: #757575;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  margin: auto;
+}
+.avatar-upload .avatar-preview {
+  width: 150px;
+  height: 87px;
+  border: none;
+  box-shadow: none;
+}
+.avatar-upload .avatar-preview > div {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.sup {
+  top: -14px;
+  right: -15px;
 }

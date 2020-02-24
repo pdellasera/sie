@@ -57,3 +57,12 @@ plugdo.collector("addAula", {
   query: "CALL dbsp_AddAula",
   parameter: ['json:aulaName','json:capacidad','json:gradoID']
 });
+
+plugdo.collector("addClase", {
+  type: "db",
+  action: "mysql",
+  server: connectionString,
+  queryType: "stored-procedure",
+  query: "CALL dbsp_AddNewClass",
+  parameter: ['json:claseName']
+});

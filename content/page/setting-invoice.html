@@ -1,0 +1,179 @@
+<!-- start page content -->
+<div class="page-content-wrapper">
+    <div class="page-content">
+        <div class="page-bar">
+            <!-- <div class="page-title-breadcrumb">
+                <div class=" pull-left">
+                    <div class="page-title">Student Invoice</div>
+                </div>
+                <ol class="breadcrumb page-breadcrumb pull-right">
+                    <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
+                            href="index.html">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+                    <li><a class="parent-item" href="">Fees</a>&nbsp;<i class="fa fa-angle-right"></i>
+                    </li>
+                    <li class="active">Factura</li>
+                </ol>
+            </div> -->
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="white-box">
+                    <div class="table-wrapper">
+                        <table cellspacing="0" width="100%" cellpadding="6" style="font-size: 14px; border:0;">
+                            <!-- Header Start -->
+                            <tr style="height: 40px; color: #fefefe;">
+                                <td colspan="1" style="background-color: #404040; text-align: left;">
+                                    <div class="avatar-upload">
+                                        <div class="avatar-edit">
+                                            <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+                                            <label for="imageUpload"></label>
+                                        </div>
+                                        <div class="avatar-preview">
+                                            <div id="imagePreview" style="background-image: url(https://crm.envisionworks.com.au/uploads/company/logo_dark.png);">
+                                                <input type="hidden" name="imgSave" id="imgSave" eui-bind="dataU.Img" >
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <sup class="sup">
+                                        <input class="editable" placeholder="NOMBRE DE LA ENTIDAD" eui-bind="dataU.companyName">
+                                    </sup>
+                                </td>
+                                <td colspan="1" style="background-color: #404040;"></td>
+                                <td colspan="1" style="background-color: #404040;">
+                                    <i class="fa fa-phone-square" aria-hidden="true"></i> &nbsp;&nbsp;&nbsp;
+                                    <input class="editable" placeholder="NUMERO DE TELEFONO 1" eui-bind="dataU.phone1" 
+                                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"><br>
+                                    <i class="fa fa-phone-square" aria-hidden="true"></i> &nbsp;&nbsp;&nbsp;
+                                    <input class="editable" placeholder="NUMERO DE TELEFONO 2" eui-bind="dataU.phone2"
+                                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                                </td>
+                                <td colspan="1" style="background-color: #404040;">
+                                    <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;&nbsp;&nbsp;
+                                    <input class="editable" placeholder="Panama,Ciudad de Panama" eui-bind="dataU.city"><br>
+                                    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; <input class="editable" placeholder="Calle 3ra, Transismica" eui-bind="dataU.street">
+                                </td>
+                                <td colspan="1" style="background-color: #404040;"> 
+                                    <input class="editable" placeholder="email@emailaddress.com.au" eui-bind="dataU.email"><br>
+                                    <input class="editable" placeholder=" https://websiteaddress.com.au" eui.bin="dataU.website">
+ 
+                                </td>
+                                
+                            </tr>
+                            <tr>
+                                <td colspan="4"></td>
+                                <!-- <td class="invoice-num">
+                                    #: <span ></span> 123346</td> -->
+                            </tr>
+                            <!-- Header End -->
+                            <!-- Invoice Details Start -->
+                            <tr>
+                                <td rowspan="3" colspan="1">
+                                    FACTURA PARA:<br>
+                                    <strong>{CLIENT NAME}</strong><br>
+                                    P: {RUC / CEDULA}<br>
+                                    E: {client@email.com}<br>
+                                    W{: https://clientsite.com.au}<br>
+                                    A: {DIRECCION}<br>
+                                    {DIRECCION}
+                                </td>
+                                <td colspan="3" align="center" style="font-size:35px; letter-spacing: 2px;">DETALLE DE
+                                    FACTURA</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" valign="top" align="right">Numero de factura: <span
+                                        class="invoice-num">65466454</span></td>
+                                <td colspan="2" align="right">
+                                    POR LOS SERVICIOS PRESTADOS EN EL MES DE: <strong>{MONTH}</strong><br>
+                                    FECHA: {DD/MM/YYYY}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="height: 50px;"></td>
+                            </tr>
+                            <!-- Invoice Details End -->
+                            <!-- Invoice Headings Start -->
+                            <tr style="font-size: 16px; height: 50px;">
+                                <td colspan="2" style="background-color: #607D8B; color: white; text-align: center;">SERVICIO / PRODUCTOS
+                                </td>
+                                <td colspan="1" align="center"
+                                    style="background-color: #404040; border-left:4px solid white; color: white;">
+                                    CANTIDAD
+                                </td>
+                                <td colspan="1" align="center"
+                                    style="background-color: #404040; border-left:4px solid white; color: white;">
+                                    SUBTOTAL
+                                </td>
+                                <td colspan="1" align="center"
+                                    style="background-color: #404040; border-left:4px solid white; color: white;">TOTAL
+                                </td>
+                            </tr>
+                            <!-- Invoice Headings End -->
+                            <!-- Invoice Items Start -->
+                            <tr style="height: 50px; border-bottom: 1px solid #9F9F9F">
+                                <td colspan="2">{DESCRIPCION DEL PRODUCTO O SERVICIO}</td>
+                                <td colspan="1" align="center">{CANTIDAD FACTURADA}</td>
+                                <td colspan="1" align="center">{PRECIO UNITARIO}</td>
+                                <td colspan="1" align="center">{TOTAL DEL ITEM}</td>
+                            </tr>
+
+                            <!-- Invoice Items End -->
+                            <!-- Invoice Costs Start -->
+                            <tr style="height: 50px;">
+                                <td colspan="3" rowspan="5">
+                                    <strong>METODO DE PAGO</strong>{CUAL FUE EL METODO DE PAGO SELECCIONADO}<br>
+                                    <strong>{TIPO DEL METODO DE PAGO}</strong><br>
+                                    <strong>Name:</strong> {CLIENTE}<br>
+                                    <strong>BSB:</strong> {NUMERO DE TRANSASCCION}<br>
+                                    <strong>Acc:</strong>{ULTIMOS 4 DIGITOS DE SER TARJETA }<br>
+                                    <strong>Reference:</strong> {NOMBRE DEL CLIENTE}
+                                </td>
+                                <td colspan="1">Sub Total</td>
+                                <td colspan="1" align="right">{$0000.00}</td>
+                            </tr>
+                            <tr style="height: 50px;">
+                                <td colspan="1">ITBMS</td>
+                                <td colspan="1" align="right">{$0000.00}</td>
+                            </tr>
+                            <tr style="height: 50px; background-color: #404040; color: white;">
+                                <td colspan="1">GRAND TOTAL</td>
+                                <td colspan="1" align="right">{$0000.00}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <sup>Condiciones de pago antes de {dias} (<input class="editable cr-input" placeholder="Cantidad de dias" eui-bind="dataU.creditDate" style="width: 50px;">) días</sup>
+                                </td>
+                            </tr>
+                            <!-- Invoice Costs End -->
+                            <!-- Director Sigs Start -->
+                            <!-- Director Sigs End -->
+                            <!-- Footer Start -->
+                            <tr>
+                                <td colspan="5"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" width="50%" style="background: #404040;"></td>
+                                <td colspan="3" width="50%" style="background: #607D8B;"></td>
+                            </tr>
+                            <tr>
+                                <td valign="middle" colspan="3" style="font-size:24px;">
+                                    Gracias por preferirnos</td>
+                                <td valign="middle" colspan="3" align="right">
+                                    <img id="imgPreview2" src="https://crm.envisionworks.com.au/uploads/company/logo_dark.png"
+                                        style="width:70px;">
+                                </td>
+                            </tr>
+                            <!-- Footer End -->
+                        </table>
+                        <hr>
+                        <div class="text-right buttons">
+                            <button class="btn btn-primary" type="button" id="addInvoiceSetting"> GUARDAR </button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end page content -->

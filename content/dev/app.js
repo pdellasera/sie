@@ -7,6 +7,11 @@ window.global = {
        getRole:"/api/get/role/json",
        addUser:"/api/add/user/json",
        getGrados:"/api/get/grados/json",
-       createAula:"/api/add/Aula/json"
+       createAula:"/api/add/Aula/json",
+       createClass:"/api/add/Clases/json",
+       uploadImg:"/api/upload/images/json"
+    },
+    var:{
+        name:""
     }
 }

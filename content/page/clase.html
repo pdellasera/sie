@@ -12,27 +12,14 @@
             <div class="col-sm-12">
                 <div class="card-box">
                     <div class="card-head">
-                        <header>Aula</header>
+                        <header>Clase</header>
                     </div>
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-4">
-                                <input type="text" class="form-control" placeholder="Nombre" eui-bind="dataU.aulaName"
-                                    id="abc" onkeyup="myFunction()"
-                                    oninput="this.value = this.value.replace(/([0-9]+)$/, '\$1°');">
+                            <div class="col-sm-12 col-md-4">
+                                <input type="text" class="form-control" placeholder="Nombre" eui-bind="dataU.claseName"
+                                    id="abc" onkeyup="myFunction()">
                                 <span id="mostrar" class="remove"><i class="" id="changeIcon"></i></span>
-                            </div>
-                            <div class="col-4">
-                                <input type="text"
-                                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-                                    class="form-control" placeholder="Capacidad" eui-bind="dataU.capacidad" />
-                            </div>
-                            <div class="col-4">
-                                <div class="form-group">
-                                    <select class="form-control" id="selectGrado" eui-bind="dataU.gradoID">
-                                        <option value="" selected disabled>Seleccione un grado</option>
-                                    </select>
-                                </div>
                             </div>
                         </div>
                         <div class="col-lg-8 p-t-20">
@@ -40,7 +27,7 @@
                         <div class="col-lg-12 p-t-20">
                             <button
                                 class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
-                                id="addAula">
+                                id="addClass">
                                 Guardar
                             </button>
                         </div>
@@ -61,7 +48,7 @@
 
 <script>
     $(document).ready(function () {
-        $("#addAula").on("click", function (e) {
+        $("#addClass").on("click", function (e) {
             e.preventDefault();
             binder()
             var model = binder(dataU)
@@ -70,10 +57,10 @@
                 sessionID:obj.sessionID,
                 action: - 1,
                 model:model,
-                module: 102
+                module: 103
             }
             var action = new UserValidationHadle()
-            // action.userPermisos(data)
+            action.userPermisos(data)
         })
     })
    

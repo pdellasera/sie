@@ -10,7 +10,7 @@ const {
   /*################################################################################### */
   var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, './content/public/images/club');
+      cb(null, './content/public/img');
     },
     filename: function (req, file, cb) {
       cb(null, req.query.id + "_" + file.originalname)

@@ -52,8 +52,11 @@ class UtilHandle {
                             showCancelButton: false,
                             confirmButtonColor: '#3085d6',
                             confirmButtonText: 'OK!'
+                        }).then((result) => {
+                            if (result.value) {
+                                location.reload()
+                            }
                         })
-                        location.reload()
                     } else {
                         Swal.fire({
                             title: 'Lo sentimos..?',
@@ -89,11 +92,11 @@ class UtilHandle {
                             showCancelButton: false,
                             confirmButtonColor: '#3085d6',
                             confirmButtonText: 'OK!'
+                        }).then((result) => {
+                            if (result.value) {
+                                location.reload()
+                            }
                         })
-                        setTimeout(function () {
-                            location.reload()
-                        }, 500)
-
                     } else {
                         Swal.fire({
                             title: 'Lo sentimos..?',
@@ -126,10 +129,11 @@ class UtilHandle {
                             showCancelButton: false,
                             confirmButtonColor: '#3085d6',
                             confirmButtonText: 'OK!'
+                        }).then((result) => {
+                            if (result.value) {
+                                location.reload()
+                            }
                         })
-                        setTimeout(function () {
-                            location.reload()
-                        }, 500)
 
                     } else {
                         Swal.fire({
@@ -145,12 +149,73 @@ class UtilHandle {
                 })
             }
 
+            // SE INSERTA SI EL MODULO ES DE CLASES
+            if (model == 103) {
+                array = new Array(data.model)
+                var elem = {
+                    claseName: array[0].claseName
+                }
+
+                request.post(global.api.createClass, elem, function (res) {
+                    var result = res.response.result.Database[0].Table.Row[0]
+                    if (result[0].errno == 101) {
+                        Swal.fire({
+                            title: 'Lo sentimos..?',
+                            text: "Ya existe una Clase con esta nombre en el sistema..!",
+                            icon: 'warning',
+                            showCancelButton: false,
+                            confirmButtonColor: '#3085d6',
+                            confirmButtonText: 'OK!'
+                        }).then((result) => {
+                            if (result.value) {
+                                location.reload()
+                            }
+                        })
+                    }
+
+                    if (result[0].errno > 0 && result[0].errno != 101) {
+                        Swal.fire({
+                            title: 'Lo sentimos..?',
+                            text: "A ocurrido un problema consulta a tu administrador!",
+                            icon: 'warning',
+                            showCancelButton: false,
+                            confirmButtonColor: '#3085d6',
+                            confirmButtonText: 'OK!'
+                        })
+                        return false
+                    }
+
+                    if (result[0].isInsert > 0 && result[0].errno == null) {
+                        Swal.fire({
+                            title: 'Exito!',
+                            text: "Se operacion se realizo con sactifaccion!",
+                            icon: 'sucess',
+                            showCancelButton: false,
+                            confirmButtonColor: '#3085d6',
+                            confirmButtonText: 'OK!'
+                        }).then((result) => {
+                            if (result.value) {
+                                location.reload()
+                            }
+                        })
+                    }
+                })
+            }
+
+            if(model == 104){
+                array = new Array(data.model)
+                console.log(array)
+            }
+
         }
         this.update = function () {
         }
         this.delete = function () {
         }
 
+        this.checkData = function () {
+
+        }
 
     }
 }

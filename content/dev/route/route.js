@@ -87,6 +87,21 @@ class professorSearchHandler {
         };
     }
 }
+class admissionsHandler {
+    constructor() {
+        this.init = function () {
+            $(document).ready(function () {
+                var params = {
+                    isShow: 0
+                }
+                cookie.set("reload", JSON.stringify(params))
+                view.load();
+                var main_app = new mainAPP()
+                main_app.mAdmissions();
+            })
+        };
+    }
+}
 // SECCION DE CONFIGURACION DE PAGE
 var page_dashboard = {
     name: "start",
@@ -104,9 +119,9 @@ var page_sutentArchive = {
     postLoad: function () {
         $(document).ready(function () {
             new studentSearch().init()
-          
+
         });
-    } 
+    }
 }
 var page_sutentSearch = {
     name: "search-student",
@@ -115,7 +130,7 @@ var page_sutentSearch = {
         $(document).ready(function () {
             view.load();
         });
-    } 
+    }
 }
 
 var page_searchProfesor = {
@@ -123,9 +138,9 @@ var page_searchProfesor = {
     page: "./page/search-profesor.html",
     postLoad: function () {
         $(document).ready(function () {
-           new professorSearchHandler().init()
+            new professorSearchHandler().init()
         });
-    } 
+    }
 }
 
 var page_admissions = {
@@ -133,9 +148,9 @@ var page_admissions = {
     page: "./page/admissions.html",
     postLoad: function () {
         $(document).ready(function () {
-           view.load();
+            new admissionsHandler().init()
         });
-    } 
+    }
 }
 
 var page_factura = {
@@ -143,36 +158,36 @@ var page_factura = {
     page: "./page/factura.html",
     postLoad: function () {
         $(document).ready(function () {
-           view.load();
+            view.load();
         });
-    } 
+    }
 }
 var page_invoice = {
     name: "invoice",
     page: "./page/invoice.html",
     postLoad: function () {
         $(document).ready(function () {
-           view.load();
+            view.load();
         });
-    } 
+    }
 }
 var page_settings = {
     name: "settings",
     page: "./page/settings.html",
     postLoad: function () {
         $(document).ready(function () {
-           view.load();
+            view.load();
         });
-    } 
+    }
 }
 var page_addRole = {
     name: "add-role",
     page: "./page/add-role.html",
     postLoad: function () {
         $(document).ready(function () {
-           view.load();
+            view.load();
         });
-    } 
+    }
 }
 
 var page_addUser = {
@@ -180,18 +195,38 @@ var page_addUser = {
     page: "./page/add-user.html",
     postLoad: function () {
         $(document).ready(function () {
-           view.load();
+            view.load();
         });
-    } 
+    }
 }
 var page_aulas = {
     name: "aulas",
     page: "./page/aulas.html",
     postLoad: function () {
         $(document).ready(function () {
-           view.load();
+            view.load();
         });
-    } 
+    }
+}
+var page_clase = {
+    name: "clase",
+    page: "./page/clase.html",
+    postLoad: function () {
+        $(document).ready(function () {
+            view.load();
+        });
+    }
+}
+var page_settingInvoice = {
+    name: "invoiceSetting",
+    page: "./page/setting-invoice.html",
+    postLoad: function () {
+        $(document).ready(function () {
+            view.load();
+            var main_app = new mainAPP()
+            main_app.mInvoice();
+        });
+    }
 }
 
 // SECCION DE LOAD LAYOUT
@@ -215,3 +250,5 @@ route.register(page_settings);
 route.register(page_addRole);
 route.register(page_addUser);
 route.register(page_aulas);
+route.register(page_clase);
+route.register(page_settingInvoice);

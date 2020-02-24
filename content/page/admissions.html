@@ -20,7 +20,9 @@
                                 <h2>Foto alumno</h2>
                                 <div class="settings_wrap">
                                     <label class="drop_target">
-                                        <div class="image_preview"></div>
+                                        <div>
+                                            <img src="" alt="" class="image_preview">
+                                        </div>
                                         <input id="inputFile" type="file" />
                                     </label>
                                     <div class="settings_actions vertical d-flex">
@@ -62,109 +64,84 @@
                     </div>
                     <div class="card-body row">
                         <div class="col-lg-4 p-t-20">
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" type="text" id="txtFirstName">
-                                <label class="mdl-textfield__label">Nombre</label>
-                            </div>
+                            <input type="text" class="form-control" placeholder="Nombre" eui-bind="dataU.nombre">
                         </div>
                         <div class="col-lg-4 p-t-20">
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" type="text" id="txtLasttName">
-                                <label class="mdl-textfield__label">Apellido</label>
-                            </div>
+                            <input type="text" class="form-control" placeholder="Apellidos" eui-bind="dataU.apellido">
                         </div>
-                        <div class="col-lg-4 p-t-20">
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" type="text" id="txtRollNo">
-                                <label class="mdl-textfield__label">Cedula</label>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 p-t-20">
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" type="email" id="txtemail">
-                                <label class="mdl-textfield__label">Email</label>
-                                <span class="mdl-textfield__error">Enter Valid Email Address!</span>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 p-t-20">
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" type="text" id="date">
-                                <label class="mdl-textfield__label">Fecha de Admision</label>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 p-t-20">
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height txt-full-width">
-                                <input class="mdl-textfield__input" type="text" id="list2" value="" readonly
-                                    tabIndex="-1">
-                                <label for="list2" class="pull-right margin-0">
-                                    <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+                        <div class="col-lg-4 p-t-20 text-center">
+                            <div class="btn-group mt-0" data-toggle="buttons">
+                                <label class="btn  btn-sm ">
+                                    <input type="checkbox" class="m-checkbox__input" id="N" checked> Nacional
                                 </label>
-                                <label for="list2" class="mdl-textfield__label">Grado</label>
-                                <ul data-mdl-for="list2" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-                                    <li class="mdl-menu__item" data-val="DE">Computer</li>
-                                    <li class="mdl-menu__item" data-val="BY">Mechanical</li>
-                                    <li class="mdl-menu__item" data-val="BY">Mathematics</li>
-                                    <li class="mdl-menu__item" data-val="BY">Commerce</li>
-                                </ul>
+                                <label class="btn  btn-sm ">
+                                    <input type="checkbox" class="m-checkbox__input" id="E"> Extranjero
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 p-t-20 text-center">
+                            <input type="text" class="form-control" style="display: none;" placeholder="Pasaporte" eui-bind="dataU.cedula"
+                            id="PASEXT">
+                            <input type="text" class="form-control" placeholder="Cédula" eui-bind="dataU.cedula"
+                                id="NIP">
+                            <span class="error">No es una cedula valida de la Republica de Panama</span>
+                        </div>
+                        <div class="col-lg-4 p-t-20">
+                            <input type="email" class="form-control" placeholder="Correo Electrónico"
+                                eui-bind="dataU.nombre">
+                        </div>
+                        <div class="col-lg-4 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input form-control" type="text" id="date"
+                                    placeholder="Fecha de Admision">
+                                <!-- <label class="mdl-textfield__label">Fecha de Admision</label> -->
+                            </div>
+                        </div>
+                        <div class="col-lg-4 p-t-20">
+                            <div class="form-group">
+                                <select class="form-control" id="selectGrado" eui-bind="dataU.grado">
+                                    <option value="" selected disabled>Seleccione un Grado</option>
+                                </select>
                             </div>
                         </div>
 
                         <div class="col-lg-4 p-t-20">
-                            <div
-                                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height txt-full-width">
-                                <input class="mdl-textfield__input" type="text" id="sample2" value="" readonly
-                                    tabIndex="-1">
-                                <label for="sample2" class="pull-right margin-0">
-                                    <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
-                                </label>
-                                <label for="sample2" class="mdl-textfield__label">Genero</label>
-                                <ul data-mdl-for="sample2" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-                                    <li class="mdl-menu__item" data-val="DE">Masculino</li>
-                                    <li class="mdl-menu__item" data-val="BY">Femenino</li>
-                                </ul>
+                            <div class="form-group">
+                                <select class="form-control" id="selectGrado" eui-bind="dataU.grado">
+                                    <option value="" selected="" disabled="">Seleccione un Sexo</option>
+                                    <option value="M">Masculino</option>
+                                    <option value="F">Femenino</option>
+                                </select>
                             </div>
                         </div>
                         <div class="col-lg-4 p-t-20">
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?"
-                                    id="text5">
-                                <label class="mdl-textfield__label" for="text5">Tipo de Sangre</label>
-                                <span class="mdl-textfield__error">Number required!</span>
-                            </div>
+                            <input type="text" class="form-control" placeholder="Tipo Sanguineo"
+                                eui-bind="dataU.bloodType">
                         </div>
                         <div class="col-lg-4 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" type="text" id="dateOfBirth">
-                                <label class="mdl-textfield__label">Fecha de Nacimiento</label>
+                                <input class="mdl-textfield__input form-control" type="text" id="dateOfBirth"
+                                    placeholder="Fecha de Nacimiento">
+                                <!-- <label class="mdl-textfield__label">Fecha de Nacimiento</label> -->
                             </div>
-                            
+
                         </div>
 
                         <div class="col-lg-4 p-t-20">
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?"
-                                    id="txtPNo">
-                                <label class="mdl-textfield__label" for="txtPNo">Parentesco</label>
-                                <span class="mdl-textfield__error">Number required!</span>
-                            </div>
+                            <input type="text" class="form-control" placeholder="Parentesco"
+                                eui-bind="dataU.parentType">
                         </div>
                         <div class="col-lg-4 p-t-20">
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" type="text" id="txtParentName">
-                                <label class="mdl-textfield__label">Nombre de acudiente</label>
-                            </div>
+                            <input type="text" class="form-control" placeholder="Nombre del Padre"
+                                eui-bind="dataU.parentName">
                         </div>
                         <div class="col-lg-4 p-t-20">
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" type="number" id="txtnumPhone">
-                                <label class="mdl-textfield__label">Numero de Telefono</label>
-                            </div>
+                            <input type="text" class="form-control" placeholder="Numero de Teléfono"
+                                eui-bind="dataU.parentPhone">
                         </div>
                         <div class="col-lg-12 p-t-20">
-                            <div class="mdl-textfield mdl-js-textfield txt-full-width">
-                                <textarea class="mdl-textfield__input" rows="4" id="text7"></textarea>
-                                <label class="mdl-textfield__label" for="text7">Address</label>
-                            </div>
+                            <input type="text" class="form-control" placeholder="Dirección" eui-bind="dataU.address">
                         </div>
 
                         <div class="col-lg-12 p-t-20 text-center">
@@ -179,7 +156,155 @@
         </div>
     </div>
 </div>
+<div id="forReload" class="overlay">
+    <div class="popup">
+        <h4>Resumen de alerta</h4>
+        <div class="content">
+            <input type="button" id="reload">
+        </div>
+        <hr>
+        <!-- <button class="btn btn-success btn-block" style="margin-top: -10px;">Resolver Incidencia</button> -->
+    </div>
+</div>
+
 <style>
+    .m-checkbox__input {
+        position: relative;
+        flex-shrink: 0;
+        width: 15px;
+        height: 15px;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        outline: none;
+        background: #fff;
+        cursor: pointer;
+        border: 2px solid #5dceee;
+    }
+
+    .m-checkbox__input:checked::before {
+        background: #5dceee;
+    }
+    .m-checkbox__input:not(:checked)::before {
+        background: #fff;
+    }
+
+    .m-checkbox__input::before {
+        content: " ";
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: 7px;
+        height: 7px;
+    }
+
+    .btn.btn-sm {
+        font-size: 11px;
+        padding: 6px 20px;
+        line-height: 0;
+    }
+
+    .button-selec {
+        position: absolute;
+        top: -9px;
+    }
+
+    .error {
+        font-size: 10px;
+        color: #dc3545;
+        text-align: center;
+        font-weight: 500;
+        display: none;
+    }
+
+    .mdl-textfield__input {
+        margin: -19px 3px;
+    }
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.7);
+        transition: opacity 500ms;
+        visibility: hidden;
+        opacity: 0;
+        z-index: 99999;
+    }
+
+    .overlay:target {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .popup {
+        /* margin: 12px auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 5px;
+        width: 30%;
+        position: relative;
+        transition: all 5s ease-in-out; */
+        margin: 258px auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 5px;
+        width: 30%;
+        position: relative;
+        transition: all 5s ease-in-out;
+    }
+
+    .popup h4 {
+        margin-top: 0;
+        color: #333;
+        font-family: Exo, Arial, sans-serif;
+    }
+
+    .popup .close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        transition: all 200ms;
+        font-size: 30px;
+        font-weight: bold;
+        text-decoration: none;
+        color: #333;
+    }
+
+    .popup .close:hover {
+        color: #06D85F;
+    }
+
+    .popup .content {
+        height: 79px;
+        max-height: 90%;
+        overflow-x: hidden;
+    }
+
+    @media screen and (max-width: 700px) {
+        .popup {
+            width: 95%;
+            height: 98%;
+        }
+    }
+
+    @media screen and (max-width: 320px) {
+        .popup {
+            height: 97.5%;
+        }
+
+        .balloon {
+            padding: 10px 0 10px 14px;
+            width: 170px;
+        }
+
+        .balloon::-webkit-input-placeholder {
+            font-size: 13px;
+        }
+    }
+
     .card-head header {
         display: inline-block;
         padding: 67px 91px;
@@ -204,7 +329,7 @@
         background: #fff;
         margin: 0 auto 3px;
         padding: 12px;
-        width: 300px;
+        width: 269px;
     }
 
     .setting h2 {
@@ -304,12 +429,20 @@
     }
 
     .drop_target .image_preview {
-        width: 100%;
+        /* width: 100%;
         height: 100%;
         background: no-repeat center;
         background-size: contain;
         position: relative;
+        z-index: 2; */
+        width: 65px;
+        height: 66px;
+        background: no-repeat center;
+        background-size: contain;
+        position: relative;
         z-index: 2;
+        margin-top: -2px;
+        margin-left: -2px;
     }
 
     .image_details {
@@ -410,68 +543,8 @@
         font-size: 16px;
     }
 </style>
-<script>
-    var $dropzone = $('.image_picker'),
-        $droptarget = $('.drop_target'),
-        $dropinput = $('#inputFile'),
-        $dropimg = $('.image_preview'),
-        $remover = $('[data-action="remove_current_image"]');
 
-    $dropzone.on('dragover', function () {
-        $droptarget.addClass('dropping');
-        return false;
-    });
-
-    $dropzone.on('dragend dragleave', function () {
-        $droptarget.removeClass('dropping');
-        return false;
-    });
-
-    $dropzone.on('drop', function (e) {
-        $droptarget.removeClass('dropping');
-        $droptarget.addClass('dropped');
-        $remover.removeClass('disabled');
-        e.preventDefault();
-
-        var file = e.originalEvent.dataTransfer.files[0],
-            reader = new FileReader();
-
-        reader.onload = function (event) {
-            $dropimg.css('background-image', 'url(' + event.target.result + ')');
-        };
-
-        console.log(file);
-        reader.readAsDataURL(file);
-
-        return false;
-    });
-
-    $dropinput.change(function (e) {
-        $droptarget.addClass('dropped');
-        $remover.removeClass('disabled');
-        $('.image_title input').val('');
-
-        var file = $dropinput.get(0).files[0],
-            reader = new FileReader();
-
-        reader.onload = function (event) {
-            $dropimg.css('background-image', 'url(' + event.target.result + ')');
-        }
-
-        reader.readAsDataURL(file);
-    });
-
-    $remover.on('click', function () {
-        $dropimg.css('background-image', '');
-        $droptarget.removeClass('dropped');
-        $remover.addClass('disabled');
-        $('.image_title input').val('');
-    });
-
-    $('.image_title input').blur(function () {
-        if ($(this).val() != '') {
-            $droptarget.removeClass('dropped');
-        }
-    });
-</script>
+<script src="plugins/material-datetimepicker/moment-with-locales.min.js"></script>
+<script src="plugins/material-datetimepicker/bootstrap-material-datetimepicker.js"></script>
+<script src="plugins/material-datetimepicker/datetimepicker.js"></script>
 <!-- end page content -->

@@ -54,3 +54,17 @@ async function addingAula(req, insertAulas, send) {
     //console.log(data)
     return data;
 }
+
+mvc.api({
+    name: "add",
+    action: "Clases",
+    methods: {
+        post: addingClases
+    }
+},"addClass", function (req, addClass, send) { send({ error: "method not allowed", errorCode: 404 }) });
+async function addingClases(req, addClass, send) {
+    //console.log(req.plugdo.post)
+    var data = await addClass.add(req.plugdo.post);
+    //console.log(data)
+    return data;
+}

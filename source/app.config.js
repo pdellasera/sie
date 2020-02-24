@@ -6,10 +6,10 @@ const setting = {
         // password: "fitwaveplugdo2020",
         // host: "fitwave-dev.czisjst5vn7k.us-east-2.rds.amazonaws.com",
         // database: "fitwave"
-        user: "root",
-        password: "",
-        host: "localhost",
-        database: "eduko"
+        user: "b19b576e028a7e",
+        password: "99211df7a6483d3",
+        host: "us-cdbr-iron-east-04.cleardb.net",
+        database: "heroku_9fe16d0083b8059"
       }
     }
     // ,

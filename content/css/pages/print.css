@@ -1,0 +1,13 @@
+@media print {
+ .buttons{
+     display: none;
+ }
+ .invoice-num{
+    font-size: 16px !important;
+    font-weight: bold !important;
+    color: #ec0000 !important;
+    text-align: center !important;
+    letter-spacing: 1px !important;
+ }
+ 
+  }
