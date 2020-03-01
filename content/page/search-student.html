@@ -8,311 +8,27 @@
             <div class="col-md-12">
                 <div class="tabbable-line">
                     <ul class="nav customtab nav-tabs" role="tablist">
-                        <li class="nav-item"><a href="#tab2" class="nav-link active" data-toggle="tab">Grid
-                                View</a></li>
-                                <li class="nav customtab nav-tabs">
-                                    <form class="search-form-opened" action="#" method="GET">
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Search..." name="query">
-                                            <span class="input-group-btn">
-                                                <a href="javascript:;" class="btn submit">
-                                                    <i class="icon-magnifier"></i>
-                                                </a>
-                                            </span>
-                                        </div>
-                                    </form>
-                                </li>
+                        <li class="nav-item">
+                            <a href="#tab2" class="nav-link active" data-toggle="tab">Grid
+                                View</a>
+                        </li>
+                        <li class="nav customtab nav-tabs">
+                            <form class="search-form-opened">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="nombre/cedula/grado" name="query" eui-bind="dataU.query">
+                                    <span class="input-group-btn">
+                                        <button  class="btn btn-primary submit">
+                                            <i class="icon-magnifier"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                            </form>
+                        </li>
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane active" id="tab2">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="card card-box">
-                                        <div class="card-body no-padding ">
-                                            <div class="doctor-profile">
-                                                <img src="img/std/std10.jpg" class="doctor-pic" alt="">
-                                                <div class="profile-usertitle">
-                                                    <div class="doctor-name">Pooja Patel </div>
-                                                    <div class="name-center"> Science </div>
-                                                </div>
-                                                <p>A-103, shyam gokul flats, Mahatma Road <br />Mumbai</p>
-                                                <div>
-                                                    <p><i class="fa fa-phone"></i><a href="tel:(123)456-7890">
-                                                            (123)456-7890</a></p>
-                                                </div>
-                                                <div class="profile-userbuttons">
-                                                    <a href="professor_profile.html"
-                                                        class="btn btn-circle deepPink-bgcolor btn-sm">Read
-                                                        More</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card card-box">
-                                        <div class="card-body no-padding ">
-                                            <div class="doctor-profile">
-                                                <img src="img/std/std1.jpg" class="doctor-pic" alt="">
-                                                <div class="profile-usertitle">
-                                                    <div class="doctor-name">Rajesh </div>
-                                                    <div class="name-center"> Mathematics </div>
-                                                </div>
-                                                <p>45, Krishna Tower, Near Bus Stop, Satellite, <br />Mumbai
-                                                </p>
-                                                <div>
-                                                    <p><i class="fa fa-phone"></i><a href="tel:(123)456-7890">
-                                                            (123)456-7890</a></p>
-                                                </div>
-                                                <div class="profile-userbuttons">
-                                                    <a href="professor_profile.html"
-                                                        class="btn btn-circle deepPink-bgcolor btn-sm">Read
-                                                        More</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card card-box">
-                                        <div class="card-body no-padding ">
-                                            <div class="doctor-profile">
-                                                <img src="img/std/std2.jpg" class="doctor-pic" alt="">
-                                                <div class="profile-usertitle">
-                                                    <div class="doctor-name">Sarah Smith </div>
-                                                    <div class="name-center"> Commerce </div>
-                                                </div>
-                                                <p>456, Estern evenue, Courtage area, <br />New York</p>
-                                                <div>
-                                                    <p><i class="fa fa-phone"></i><a href="tel:(123)456-7890">
-                                                            (123)456-7890</a></p>
-                                                </div>
-                                                <div class="profile-userbuttons">
-                                                    <a href="professor_profile.html"
-                                                        class="btn btn-circle deepPink-bgcolor btn-sm">Read
-                                                        More</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="card card-box">
-                                        <div class="card-body no-padding ">
-                                            <div class="doctor-profile">
-                                                <img src="img/std/std3.jpg" class="doctor-pic" alt="">
-                                                <div class="profile-usertitle">
-                                                    <div class="doctor-name">John Deo </div>
-                                                    <div class="name-center"> Arts </div>
-                                                </div>
-                                                <p>A-103, shyam gokul flats, Mahatma Road <br />Mumbai</p>
-                                                <div>
-                                                    <p><i class="fa fa-phone"></i><a href="tel:(123)456-7890">
-                                                            (123)456-7890</a></p>
-                                                </div>
-                                                <div class="profile-userbuttons">
-                                                    <a href="professor_profile.html"
-                                                        class="btn btn-circle deepPink-bgcolor btn-sm">Read
-                                                        More</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card card-box">
-                                        <div class="card-body no-padding ">
-                                            <div class="doctor-profile">
-                                                <img src="img/std/std4.jpg" class="doctor-pic" alt="">
-                                                <div class="profile-usertitle">
-                                                    <div class="doctor-name">Jay Soni </div>
-                                                    <div class="name-center"> M.B.A. </div>
-                                                </div>
-                                                <p>45, Krishna Tower, Near Bus Stop, Satellite, <br />Mumbai
-                                                </p>
-                                                <div>
-                                                    <p><i class="fa fa-phone"></i><a href="tel:(123)456-7890">
-                                                            (123)456-7890</a></p>
-                                                </div>
-                                                <div class="profile-userbuttons">
-                                                    <a href="professor_profile.html"
-                                                        class="btn btn-circle deepPink-bgcolor btn-sm">Read
-                                                        More</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card card-box">
-                                        <div class="card-body no-padding ">
-                                            <div class="doctor-profile">
-                                                <img src="img/std/std5.jpg" class="doctor-pic" alt="">
-                                                <div class="profile-usertitle">
-                                                    <div class="doctor-name">Jacob Ryan </div>
-                                                    <div class="name-center"> Urology </div>
-                                                </div>
-                                                <p>456, Estern evenue, Courtage area, <br />New York</p>
-                                                <div>
-                                                    <p><i class="fa fa-phone"></i><a href="tel:(123)456-7890">
-                                                            (123)456-7890</a></p>
-                                                </div>
-                                                <div class="profile-userbuttons">
-                                                    <a href="professor_profile.html"
-                                                        class="btn btn-circle deepPink-bgcolor btn-sm">Read
-                                                        More</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="card card-box">
-                                        <div class="card-body no-padding ">
-                                            <div class="doctor-profile">
-                                                <img src="img/std/std6.jpg" class="doctor-pic" alt="">
-                                                <div class="profile-usertitle">
-                                                    <div class="doctor-name">Megha Trivedi </div>
-                                                    <div class="name-center"> Electrical </div>
-                                                </div>
-                                                <p>A-103, shyam gokul flats, Mahatma Road <br />Mumbai</p>
-                                                <div>
-                                                    <p><i class="fa fa-phone"></i><a href="tel:(123)456-7890">
-                                                            (123)456-7890</a></p>
-                                                </div>
-                                                <div class="profile-userbuttons">
-                                                    <a href="professor_profile.html"
-                                                        class="btn btn-circle deepPink-bgcolor btn-sm">Read
-                                                        More</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card card-box">
-                                        <div class="card-body no-padding ">
-                                            <div class="doctor-profile">
-                                                <img src="img/std/std1.jpg" class="doctor-pic" alt="">
-                                                <div class="profile-usertitle">
-                                                    <div class="doctor-name">Rajesh </div>
-                                                    <div class="name-center"> Mathematics </div>
-                                                </div>
-                                                <p>45, Krishna Tower, Near Bus Stop, Satellite, <br />Mumbai
-                                                </p>
-                                                <div>
-                                                    <p><i class="fa fa-phone"></i><a href="tel:(123)456-7890">
-                                                            (123)456-7890</a></p>
-                                                </div>
-                                                <div class="profile-userbuttons">
-                                                    <a href="professor_profile.html"
-                                                        class="btn btn-circle deepPink-bgcolor btn-sm">Read
-                                                        More</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card card-box">
-                                        <div class="card-body no-padding ">
-                                            <div class="doctor-profile">
-                                                <img src="img/std/std2.jpg" class="doctor-pic" alt="">
-                                                <div class="profile-usertitle">
-                                                    <div class="doctor-name">Sarah Smith </div>
-                                                    <div class="name-center"> Commerce </div>
-                                                </div>
-                                                <p>456, Estern evenue, Courtage area, <br />New York</p>
-                                                <div>
-                                                    <p><i class="fa fa-phone"></i><a href="tel:(123)456-7890">
-                                                            (123)456-7890</a></p>
-                                                </div>
-                                                <div class="profile-userbuttons">
-                                                    <a href="professor_profile.html"
-                                                        class="btn btn-circle deepPink-bgcolor btn-sm">Read
-                                                        More</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="card card-box">
-                                        <div class="card-body no-padding ">
-                                            <div class="doctor-profile">
-                                                <img src="img/std/std10.jpg" class="doctor-pic" alt="">
-                                                <div class="profile-usertitle">
-                                                    <div class="doctor-name">Pooja Patel </div>
-                                                    <div class="name-center"> Science </div>
-                                                </div>
-                                                <p>A-103, shyam gokul flats, Mahatma Road <br />Mumbai</p>
-                                                <div>
-                                                    <p><i class="fa fa-phone"></i><a href="tel:(123)456-7890">
-                                                            (123)456-7890</a></p>
-                                                </div>
-                                                <div class="profile-userbuttons">
-                                                    <a href="professor_profile.html"
-                                                        class="btn btn-circle deepPink-bgcolor btn-sm">Read
-                                                        More</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card card-box">
-                                        <div class="card-body no-padding ">
-                                            <div class="doctor-profile">
-                                                <img src="img/std/std1.jpg" class="doctor-pic" alt="">
-                                                <div class="profile-usertitle">
-                                                    <div class="doctor-name">Rajesh </div>
-                                                    <div class="name-center"> Mathematics </div>
-                                                </div>
-                                                <p>45, Krishna Tower, Near Bus Stop, Satellite, <br />Mumbai
-                                                </p>
-                                                <div>
-                                                    <p><i class="fa fa-phone"></i><a href="tel:(123)456-7890">
-                                                            (123)456-7890</a></p>
-                                                </div>
-                                                <div class="profile-userbuttons">
-                                                    <a href="professor_profile.html"
-                                                        class="btn btn-circle deepPink-bgcolor btn-sm">Read
-                                                        More</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card card-box">
-                                        <div class="card-body no-padding ">
-                                            <div class="doctor-profile">
-                                                <img src="img/std/std3.jpg" class="doctor-pic" alt="">
-                                                <div class="profile-usertitle">
-                                                    <div class="doctor-name">John Deo </div>
-                                                    <div class="name-center"> Arts </div>
-                                                </div>
-                                                <p>A-103, shyam gokul flats, Mahatma Road <br />Mumbai</p>
-                                                <div>
-                                                    <p><i class="fa fa-phone"></i><a href="tel:(123)456-7890">
-                                                            (123)456-7890</a></p>
-                                                </div>
-                                                <div class="profile-userbuttons">
-                                                    <a href="professor_profile.html"
-                                                        class="btn btn-circle deepPink-bgcolor btn-sm">Read
-                                                        More</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <!-- ALUMNOS -->
+                            <plugdo-student-card style="display: none;" name="studentCard" src="/component/student-componet.html"></plugdo-student-card>
                         </div>
                     </div>
                 </div>
@@ -323,11 +39,12 @@
 <!-- end page content -->
 
 <style>
-.header-dark form.search-form-opened {
-    background-color: #607d8b5c !important;
-    border: 0;
-}
-input[name="query"]::placeholder{
-    color: #fff;
-}
+    .header-dark form.search-form-opened {
+        background-color: #607d8b5c !important;
+        border: 0;
+    }
+
+    input[name="query"]::placeholder {
+        color: #fff;
+    }
 </style>

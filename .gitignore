@@ -1,1 +1,4 @@
 node_modules
+create.sh
+pull.sh
+push.sh

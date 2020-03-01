@@ -67,7 +67,25 @@ class dashboardHandler {
         $(".username").text(nick);
     }
 }
-
+class loadStudentHandler {
+    constructor() {
+        this.init = function () {
+          request.post(global.api.getAllStudents,{},function(res){
+              var data = res.response.result.Database[0].Table.Row[0]
+              var model = {
+                  "css":"row",
+                  "items":[]
+              }
+              model.items = data
+              cookie.set("allStudents",JSON.stringify(data),1)
+              view.setInitialData("plugdo-student-card", "studentCard", model);
+              view.load();
+              var main_app = new mainAPP()
+              main_app.mSearchStudent();
+          })  
+        }
+    }
+}
 class studentSearch {
     constructor() {
         this.init = function () {
@@ -128,7 +146,7 @@ var page_sutentSearch = {
     page: "./page/search-student.html",
     postLoad: function () {
         $(document).ready(function () {
-            view.load();
+            new loadStudentHandler().init()
         });
     }
 }

@@ -1,0 +1,51 @@
+<plugdo-student-card>
+    <data>
+        {
+            "css":"row",
+            "items":[{
+                "alumnoID":"12",
+                "nombre":"Josephin",
+                "apellido":"Leftierm",
+                "cedula":"8-996-6366",
+                "email":"jbartolome@gmail.com",
+                "gradosName":"Kinder",
+                "sexo":"",
+                "bloodType":"",
+                "birthDate":"",
+                "parentType":"",
+                "parentName":"",
+                "parentPhone":"6211-0018",
+                "address":"",
+                "rowCreate":"",
+                "img":"img/std/std1.jpg"
+            }]
+        }
+    </data>
+    <template>
+        <template-item  class="[json:css]" model="items"></template-item>
+    </template>
+    <template-item>
+        <div class="col-md-3">
+           <div class="card card-box">
+            <div class="card-body no-padding ">
+                <div class="doctor-profile">
+                    <img src="[json:img]" class="doctor-pic" alt="">
+                    <div class="profile-usertitle">
+                        <div class="doctor-name">[json:nombre] [json:apellido] </div>
+                        <div class="name-center"> [json:gradosName] </div>
+                    </div>
+                    <p>Cedula: [json:cedula]</p>
+                    <div>
+                        <p><i class="fa fa-phone"></i><a href="tel:(507)[json:parentPhone]">
+                                (507)[json:parentPhone]</a></p>
+                    </div>
+                    <div class="profile-userbuttons">
+                        <a id="[json:alumnoID]" class="btn btn-circle deepPink-bgcolor btn-sm">Detalle</a>
+                    </div>
+                </div>
+            </div>
+        </div>  
+        </div>
+       
+    </template-item>
+</plugdo-student-card>

@@ -13,7 +13,7 @@
             <div class="col-sm-12">
                 <div class="card-box">
                     <div class="card-head">
-                        <header>Información Básica</header>
+                        <header class="header">Información Básica</header>
                         <div class="col-md-12">
 
                             <div class="setting image_picker float-rigth">
@@ -81,19 +81,19 @@
                         </div>
 
                         <div class="col-lg-4 p-t-20 text-center">
-                            <input type="text" class="form-control" style="display: none;" placeholder="Pasaporte" eui-bind="dataU.cedula"
-                            id="PASEXT">
+                            <!-- <input type="text" class="form-control" style="display: none;" placeholder="Pasaporte" eui-bind="dataU.cedula"
+                            id="PASEXT"> -->
                             <input type="text" class="form-control" placeholder="Cédula" eui-bind="dataU.cedula"
                                 id="NIP">
                             <span class="error">No es una cedula valida de la Republica de Panama</span>
                         </div>
                         <div class="col-lg-4 p-t-20">
                             <input type="email" class="form-control" placeholder="Correo Electrónico"
-                                eui-bind="dataU.nombre">
+                                eui-bind="dataU.email">
                         </div>
                         <div class="col-lg-4 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input form-control" type="text" id="date"
+                                <input class="mdl-textfield__input form-control mdl-textfield__input_fix" type="text" id="currentDate"  disabled
                                     placeholder="Fecha de Admision">
                                 <!-- <label class="mdl-textfield__label">Fecha de Admision</label> -->
                             </div>
@@ -108,7 +108,7 @@
 
                         <div class="col-lg-4 p-t-20">
                             <div class="form-group">
-                                <select class="form-control" id="selectGrado" eui-bind="dataU.grado">
+                                <select class="form-control" id="selectGrado" eui-bind="dataU.sexo">
                                     <option value="" selected="" disabled="">Seleccione un Sexo</option>
                                     <option value="M">Masculino</option>
                                     <option value="F">Femenino</option>
@@ -121,7 +121,7 @@
                         </div>
                         <div class="col-lg-4 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input form-control" type="text" id="dateOfBirth"
+                                <input class="mdl-textfield__input form-control mdl-textfield__input_fix" type="text" id="dateOfBirth" eui-bind="dataU.birthDate"
                                     placeholder="Fecha de Nacimiento">
                                 <!-- <label class="mdl-textfield__label">Fecha de Nacimiento</label> -->
                             </div>
@@ -145,9 +145,9 @@
                         </div>
 
                         <div class="col-lg-12 p-t-20 text-center">
-                            <button type="button"
+                            <button type="button" id="addAlumno"
                                 class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 m-r-20 btn-pink">Submit</button>
-                            <button type="button"
+                            <button type="button" id="cancelAlumno"
                                 class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 btn-default">Cancel</button>
                         </div>
                     </div>
@@ -166,384 +166,6 @@
         <!-- <button class="btn btn-success btn-block" style="margin-top: -10px;">Resolver Incidencia</button> -->
     </div>
 </div>
-
-<style>
-    .m-checkbox__input {
-        position: relative;
-        flex-shrink: 0;
-        width: 15px;
-        height: 15px;
-        appearance: none;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        outline: none;
-        background: #fff;
-        cursor: pointer;
-        border: 2px solid #5dceee;
-    }
-
-    .m-checkbox__input:checked::before {
-        background: #5dceee;
-    }
-    .m-checkbox__input:not(:checked)::before {
-        background: #fff;
-    }
-
-    .m-checkbox__input::before {
-        content: " ";
-        position: absolute;
-        top: 2px;
-        left: 2px;
-        width: 7px;
-        height: 7px;
-    }
-
-    .btn.btn-sm {
-        font-size: 11px;
-        padding: 6px 20px;
-        line-height: 0;
-    }
-
-    .button-selec {
-        position: absolute;
-        top: -9px;
-    }
-
-    .error {
-        font-size: 10px;
-        color: #dc3545;
-        text-align: center;
-        font-weight: 500;
-        display: none;
-    }
-
-    .mdl-textfield__input {
-        margin: -19px 3px;
-    }
-
-    .overlay {
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: rgba(0, 0, 0, 0.7);
-        transition: opacity 500ms;
-        visibility: hidden;
-        opacity: 0;
-        z-index: 99999;
-    }
-
-    .overlay:target {
-        visibility: visible;
-        opacity: 1;
-    }
-
-    .popup {
-        /* margin: 12px auto;
-        padding: 20px;
-        background: #fff;
-        border-radius: 5px;
-        width: 30%;
-        position: relative;
-        transition: all 5s ease-in-out; */
-        margin: 258px auto;
-        padding: 20px;
-        background: #fff;
-        border-radius: 5px;
-        width: 30%;
-        position: relative;
-        transition: all 5s ease-in-out;
-    }
-
-    .popup h4 {
-        margin-top: 0;
-        color: #333;
-        font-family: Exo, Arial, sans-serif;
-    }
-
-    .popup .close {
-        position: absolute;
-        top: 20px;
-        right: 30px;
-        transition: all 200ms;
-        font-size: 30px;
-        font-weight: bold;
-        text-decoration: none;
-        color: #333;
-    }
-
-    .popup .close:hover {
-        color: #06D85F;
-    }
-
-    .popup .content {
-        height: 79px;
-        max-height: 90%;
-        overflow-x: hidden;
-    }
-
-    @media screen and (max-width: 700px) {
-        .popup {
-            width: 95%;
-            height: 98%;
-        }
-    }
-
-    @media screen and (max-width: 320px) {
-        .popup {
-            height: 97.5%;
-        }
-
-        .balloon {
-            padding: 10px 0 10px 14px;
-            width: 170px;
-        }
-
-        .balloon::-webkit-input-placeholder {
-            font-size: 13px;
-        }
-    }
-
-    .card-head header {
-        display: inline-block;
-        padding: 67px 91px;
-        vertical-align: middle;
-        line-height: 17px;
-        font-size: 20px;
-        position: absolute;
-    }
-
-    .float-rigth {
-        float: right;
-    }
-
-    @font-face {
-        font-family: 'Open Sans';
-        font-style: normal;
-        font-weight: 400;
-        src: local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v17/mem8YaGs126MiZpBA-UFVZ0e.ttf) format('truetype');
-    }
-
-    .setting {
-        background: #fff;
-        margin: 0 auto 3px;
-        padding: 12px;
-        width: 269px;
-    }
-
-    .setting h2 {
-        color: #999;
-        font-size: 14px;
-        font-weight: 400;
-        margin: 0 0 6px;
-        line-height: 24px;
-    }
-
-    .setting a[data-action] {
-        cursor: pointer;
-        color: #555;
-        font-size: 14px;
-        line-height: 24px;
-        transition: color 0.2s;
-    }
-
-    .setting a[data-action] i {
-        width: 1.25em;
-        text-align: center;
-    }
-
-    .setting a[data-action]:hover {
-        color: #f80;
-    }
-
-    .setting a[data-action].disabled {
-        opacity: 0.35;
-        cursor: default;
-    }
-
-    .setting a[data-action].disabled:hover {
-        color: #555;
-    }
-
-    .image_picker .settings_wrap {
-        overflow: hidden;
-        position: relative;
-    }
-
-    .image_picker .settings_wrap .drop_target,
-    .image_picker .settings_wrap .settings_actions {
-        float: left;
-    }
-
-    .image_picker .settings_wrap .drop_target {
-        margin-right: 18px;
-    }
-
-    .image_picker .settings_wrap .settings_actions {
-        margin-top: 12px;
-    }
-
-    .settings_actions.vertical a {
-        display: block;
-    }
-
-    .drop_target {
-        position: relative;
-        cursor: pointer;
-        background: hsl(0, 0%, 90%);
-        border-top: 1px solid hsl(0, 0%, 80%);
-        border-radius: 4px;
-        width: 72px;
-        height: 72px;
-        padding: 4px 6px 6px;
-        transition: all 0.2s;
-    }
-
-    .drop_target input[type="file"] {
-        visibility: hidden;
-    }
-
-    .drop_target:before {
-        content: '\f0ee';
-        font-family: FontAwesome;
-        position: absolute;
-        display: block;
-        width: 60px;
-        line-height: 60px;
-        text-align: center;
-        font-size: 32px;
-        color: rgba(0, 0, 0, 0.3);
-        transition: color 0.2s;
-    }
-
-    .drop_target:hover,
-    .drop_target.dropping {
-        background: #f80;
-        border-top-color: #cc6d00;
-    }
-
-    .drop_target:hover:before,
-    .drop_target.dropping:before {
-        color: rgba(0, 0, 0, 0.6);
-    }
-
-    .drop_target .image_preview {
-        /* width: 100%;
-        height: 100%;
-        background: no-repeat center;
-        background-size: contain;
-        position: relative;
-        z-index: 2; */
-        width: 65px;
-        height: 66px;
-        background: no-repeat center;
-        background-size: contain;
-        position: relative;
-        z-index: 2;
-        margin-top: -2px;
-        margin-left: -2px;
-    }
-
-    .image_details {
-        width: 192px;
-        padding: 4px;
-        background: hsl(0, 0%, 90%);
-        border-radius: 4px;
-        position: absolute;
-        top: 0;
-        left: 84px;
-        z-index: 5;
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.4s;
-    }
-
-    .mdl-textfield__label {
-        color: #000000 !important;
-        font-size: 13px !important;
-    }
-
-    /* .dropped~.image_details {
-        opacity: 1;
-        pointer-events: all;
-    } */
-
-    .image_details:before {
-        content: '';
-        display: block;
-        width: 0;
-        height: 0;
-        border: 6px solid transparent;
-        border-right-color: hsl(0, 0%, 90%);
-        position: absolute;
-        left: -12px;
-        top: 10px;
-    }
-
-    .image_details .input_line {
-        display: block;
-        overflow: hidden;
-        margin-bottom: 4px;
-    }
-
-    .image_details .input_line:last-of-type {
-        margin-bottom: 0;
-    }
-
-    .image_details .input_line span,
-    .image_details .input_line input {
-        float: left;
-        line-height: 24px;
-    }
-
-    .image_details .input_line span {
-        font-size: 12px;
-        color: #666;
-        width: 20%;
-    }
-
-    .image_details .input_line input[type="text"] {
-        width: 100%;
-        color: #444444;
-        appearance: none;
-        border: 1px solid hsl(0, 0%, 90%);
-        border-radius: 3px;
-        background: #fff;
-        height: 24px;
-        line-height: 18px;
-        padding: 3px 5px;
-        font-size: 14px;
-        transition: border 0.2s;
-    }
-
-    .image_details .input_line input[type="text"]:hover,
-    .image_details .input_line input[type="text"]:focus {
-        outline: 0;
-        border: 1px solid #f80;
-    }
-
-    .image_details .input_line input[type="text"]::-webkit-input-placeholder {
-        font-size: 14px;
-        color: #999;
-    }
-
-    .image_details a.confirm {
-        position: absolute;
-        right: -12px;
-        top: 50%;
-        margin-top: -12px;
-        display: block;
-        width: 21px;
-        height: 21px;
-        border-radius: 100%;
-        background: #eee;
-        line-height: 23px;
-        text-align: center;
-        font-size: 16px;
-    }
-</style>
-
 <script src="plugins/material-datetimepicker/moment-with-locales.min.js"></script>
 <script src="plugins/material-datetimepicker/bootstrap-material-datetimepicker.js"></script>
 <script src="plugins/material-datetimepicker/datetimepicker.js"></script>

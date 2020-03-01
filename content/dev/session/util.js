@@ -202,9 +202,57 @@ class UtilHandle {
                 })
             }
 
-            if(model == 104){
+            if (model == 104) {
                 array = new Array(data.model)
                 console.log(array)
+            }
+
+            if (model == 1) {
+                var array = new Array(data.model)
+                var elem = {
+                    nombre: array[0].nombre,
+                    apellido: array[0].apellido,
+                    cedula: array[0].cedula,
+                    email: array[0].email,
+                    gradoID: array[0].grado,
+                    sexo: array[0].sexo,
+                    bloodType: array[0].bloodType,
+                    birthDate: array[0].birthDate,
+                    parentType: array[0].parentType,
+                    parentName: array[0].parentName,
+                    parentPhone: array[0].parentPhone,
+                    address: array[0].address,
+                    img: "https://p1.hiclipart.com/preview/227/359/624/education-icon-avatar-student-share-icon-user-user-profile-education-purple-png-clipart.jpg"
+                }
+                request.post(global.api.addAlumno, elem, function (res) {
+                    var isInsert = res.response.result.Database[0].Table.Row[0][0].isInsert
+                    if(isInsert > 0){
+                        Swal.fire({
+                            title: "Se a registrado con exito al nuevo almno",
+                            icon: 'success',
+                            showCancelButton: true,
+                            confirmButtonText: 'ok'
+                          }).then((result) => {
+                            if (result.value) {
+                              location.reload()
+                            }
+                          })
+                    }else{
+                        Swal.fire({
+                            title: "Lo sentimos pero ya existe un alumno registrado con el numero de cedula" + `"${array[0].cedula}"`,
+                            icon: 'error',
+                            showCancelButton: true,
+                            confirmButtonText: 'ok'
+                          }).then((result) => {
+                            if (result.value) {
+                              return false;
+                            }else{
+                                location.reload()
+                            }
+                          })
+                    }
+                    //console.log(res)
+                })
             }
 
         }

@@ -27,7 +27,7 @@ class mainAPP {
                             next = array[i].gradosCatID
                             notcreate = true
                         }
-                        console.log('f')
+                        //console.log('f')
                         if (array[i].gradosCatID == next) {
                             next = array[i].gradosCatID
                             var option = document.createElement("option");
@@ -99,7 +99,16 @@ class mainAPP {
             }
 
             $(document).ready(function () {
+                // SET DIA DE ADMISION
+                Date.prototype.yyyymmdd = function () {
+                    var yyyy = this.getFullYear().toString();
+                    var mm = (this.getMonth() + 1).toString(); // getMonth() is zero-based
+                    var dd = this.getDate().toString();
+                    return yyyy + "/" + (mm[1] ? mm : "0" + mm[0]) + "/" + (dd[1] ? dd : "0" + dd[0]); // padding
+                };
+                var currentDate = new Date()
 
+                $("#currentDate").val(currentDate.yyyymmdd())
                 // INPUT CEDULA VALIDATION
                 $("#NIP").on("blur", function (e) {
                     var isValid = validateCedula(this.value);
@@ -122,10 +131,15 @@ class mainAPP {
                 $("input[type=checkbox]").on("change", function (e) {
                     e.preventDefault();
                     var id = this.id
-                    if (this.checked == true) {
-                        $("input[type=checkbox]").prop("checked",false)
+                    $("input[type=checkbox]").prop("checked", false)
+                    $(this).prop("checked", true)
+                    if (id == "E") {
+                        $("#NIP").attr("id", "PASP")
+                        $("#PASP").attr("placeholder", "Pasaporte");
+                    } else {
+                        $("#PASP").attr("id", "NIP")
+                        $("#NIP").attr("placeholder", "Cedula");
                     }
-                    $(this).prop("checked",true)
                 })
 
                 // CLEAR AVATAR CONTAINER
@@ -135,7 +149,7 @@ class mainAPP {
                     }
                 });
 
-                 // POPUP SECTION
+                // POPUP SECTION
                 // $($target).css({
                 //     "visibility": "visible",
                 //     "opacity": 1,
@@ -210,6 +224,41 @@ class mainAPP {
                     $remover.addClass('disabled');
                     $('.image_title input').val('');
                 });
+
+                // SE INSERTA EL NUEVO ALUMNO 
+                $("#addAlumno").on("click", function (e) {
+                    var isnull = false;
+                    e.preventDefault();
+                    binder()
+                    var model = binder(dataU)
+                    // VALIDAR MODELO
+                    $.each(model, function (s, v) {
+                        if (v == "" || v == undefined || v == null) {
+                            Swal.fire("EL campo " + `"${s}"` + " no puede estar vacio")
+                            isnull = true
+                            return false;
+                        }
+                    })
+                    if (isnull == false) {
+                        var obj = JSON.parse(cookie.get("session"))
+                        var data = {
+                            sessionID: obj.sessionID,
+                            action: - 1,
+                            model: model,
+                            module: 1
+                        }
+                        console.log(data)
+                    }
+
+
+                    var action = new UserValidationHadle()
+                    action.userPermisos(data)
+                })
+
+                // SE CANCELA EL REGISTRO
+                $("#cancelAlumno").on("click", function (e) {
+                    location.reload()
+                })
             })
         }
         this.mAulas = function () {
@@ -378,6 +427,57 @@ class mainAPP {
 
                 }
             }
+
+        }
+
+        this.mSearchStudent = function () {
+            $(document).ready(function () {
+                $(".submit").on("click", function (e) {
+                    e.preventDefault()
+                    binder()
+                    var model = binder(dataU)
+                    if(model.query == ""){
+                        Swal.fire({
+                            title: 'Upss!',
+                            text: "No existe criterio para la busqueda",
+                            icon: 'warning',
+                            showCancelButton: false,
+                            confirmButtonColor: '#3085d6',
+                            confirmButtonText: 'OK!'
+                        }).then((result) => {
+                            if (result.value) {
+                                return false;
+                            }
+                        })
+                    }else{
+                        var array = JSON.parse(cookie.get("allStudents"));
+                        var grouped = plugdo
+                            .select("clubID, userID, sessionID, nombre, apellido,img,edad,perfil")
+                            .from(array)
+                            .where((item) => {
+                                var value = model.query
+                                var result = false;
+                                var fullName = item.nombre.trim() + " " + item.apellido.trim()
+    
+                                if (fullName == value || item.nombre.trim() == value || item.apellido.trim() == value || item.cedula.trim() == value || item.gradosName.trim() == value) {
+                                    result = true;
+                                }
+                                return result;
+                            })
+                            .return();
+    
+                        var elem = {
+                            "css": "row",
+                            "items": []
+                        }
+                        
+                        elem.items = grouped;
+                        console.log(grouped)
+                        view.setData("studentCard", elem);
+                    }
+                   
+                })
+            })
 
         }
     }

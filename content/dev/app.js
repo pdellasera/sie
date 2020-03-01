@@ -9,7 +9,9 @@ window.global = {
        getGrados:"/api/get/grados/json",
        createAula:"/api/add/Aula/json",
        createClass:"/api/add/Clases/json",
-       uploadImg:"/api/upload/images/json"
+       uploadImg:"/api/upload/images/json",
+       addAlumno:"/api/add/alumno/json",
+       getAllStudents:"/api/get/allStudents/json"
     },
     var:{
         name:""
